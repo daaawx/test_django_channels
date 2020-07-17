@@ -114,3 +114,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Channels
+INSTALLED_APPS += ['channels']
+ASGI_APPLICATION = 'test_django_channels.routing.application'
