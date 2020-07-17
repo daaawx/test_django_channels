@@ -135,3 +135,11 @@ STATIC_URL = '/static/'
 # Channels
 INSTALLED_APPS += ['channels']
 ASGI_APPLICATION = 'test_django_channels.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
